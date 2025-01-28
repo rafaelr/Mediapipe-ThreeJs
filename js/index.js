@@ -53,7 +53,7 @@ export class App {
       geometry,
       new THREE.MeshNormalMaterial({ transparent: true })
     );
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 3; i++) {
       const mat = new THREE.MeshNormalMaterial({ transparent: true });
       const _object = object.clone();
       _object.material = mat;
@@ -168,8 +168,8 @@ export class App {
     if(this.dragging) {
       console.log('dragging');
       console.log(this.handControls.target.position);
-
-      ScenesManager.cursorClosed.position.copy(this.handControls.target.position).sub(new THREE.Vector3(-0.2, 0.2, +0.2));
+      //set this.handControls.target.position to hand closed
+      ScenesManager.cursorClosed.position.copy(this.handControls.target.position).sub(new THREE.Vector3(-0.2, 0.2, 0.2));
       
      }
     
